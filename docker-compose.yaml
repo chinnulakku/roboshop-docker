@@ -10,14 +10,14 @@ services:
     # - roboshop
 
   catalogue:
-    image: catalogue:1
+    image: catalogue:v1
     # networks:
     # - roboshop
     depends_on:
     - mongodb
   
   web:
-    image: web:1
+    image: web:v1
     ports:
     - "80:80"
     depends_on:
@@ -27,13 +27,13 @@ services:
       image: redis 
 
   user:
-    image: user:1
+    image: user:v1
     depends_on:
     - redis
     - mongodb
 
   cart: 
-    image: cart:1
+    image: cart:v1
     depends_on:
     - redis
     - catalogue
